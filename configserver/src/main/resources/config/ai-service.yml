@@ -1,0 +1,36 @@
+server:
+  port: 8083
+  mongodb:
+    database: fitnessrecommandation
+    uri: mongodb://localhost:27017/fitnessrecommandation
+  rabbitmq:
+    host: localhost
+    port: 5673
+    username: guest
+    password: guest
+    listener:
+      simple:
+        concurrency: 1
+        max-concurrency: 1
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+rabbitmq:
+  exchange:
+    name: fitness.exchange
+  queue:
+    name: activity.queue
+  routing:
+    key: activity.tracking
+  listener:
+    simple:
+      concurrency: 1
+      max-concurrency: 1
+groq:
+  api:
+    url: https://api.groq.com/openai/v1/chat/completions
+    key: ${GROQ_API_KEY}

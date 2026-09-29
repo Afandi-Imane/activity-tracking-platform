@@ -1,0 +1,25 @@
+# Maven
+target/
+*.class
+*.jar
+*.war
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.eclipse
+
+# Logs
+*.log
+logs/
+
+# Environment / Secrets
+.env
+*.env
+application-local.yml
+application-secrets.yml
+
+# OS
+.DS_Store
+Thumbs.db
