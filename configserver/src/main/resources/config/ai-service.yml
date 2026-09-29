@@ -1,5 +1,7 @@
 server:
   port: 8083
+
+spring:
   mongodb:
     database: fitnessrecommandation
     uri: mongodb://localhost:27017/fitnessrecommandation
@@ -12,6 +14,7 @@ server:
       simple:
         concurrency: 1
         max-concurrency: 1
+
 eureka:
   client:
     serviceUrl:
@@ -19,6 +22,7 @@ eureka:
   instance:
     hostname: localhost
     prefer-ip-address: true
+
 rabbitmq:
   exchange:
     name: fitness.exchange
@@ -26,10 +30,7 @@ rabbitmq:
     name: activity.queue
   routing:
     key: activity.tracking
-  listener:
-    simple:
-      concurrency: 1
-      max-concurrency: 1
+
 groq:
   api:
     url: https://api.groq.com/openai/v1/chat/completions
